@@ -3,10 +3,11 @@
   "private": true,
   "scripts": {
     "start": "lerna run start",
+    "build":"lerna run build --scope=@mypass/frontend",
     "format_lint":"lerna run format_lint",
     "deploy":"lerna run build --scope=@mypass/frontend && lerna run compile --scope=@mypass/backend"
   },
-  "devDependencies": {
+  "dependencies": {
     "lerna": "^4.0.0"
   }
 }
