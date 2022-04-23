@@ -1,0 +1,12 @@
+{
+  "name": "mypass",
+  "private": true,
+  "scripts": {
+    "start": "lerna run start",
+    "format_lint":"lerna run format_lint",
+    "deploy":"lerna run build --scope=@mypass/frontend && lerna run compile --scope=@mypass/backend"
+  },
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}

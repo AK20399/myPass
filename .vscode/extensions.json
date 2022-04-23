@@ -1,0 +1,7 @@
+ {
+     "recommendations": [
+       "esbenp.prettier-vscode",
+       "vikyd.vscode-fold-level",
+       "dsznajder.es7-react-js-snippets"
+     ]
+   }
