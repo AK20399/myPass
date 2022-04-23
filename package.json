@@ -2,6 +2,7 @@
   "name": "mypass",
   "private": true,
   "scripts": {
+    "install": "lerna run install",
     "start": "lerna run start",
     "build":"lerna run build --scope=@mypass/frontend",
     "format_lint":"lerna run format_lint",
