@@ -4,9 +4,9 @@
   "scripts": {
     "install": "lerna run install",
     "start": "lerna run start",
-    "build":"lerna run build --scope=@mypass/frontend",
-    "format_lint":"lerna run format_lint",
-    "deploy":"lerna run build --scope=@mypass/frontend && lerna run compile --scope=@mypass/backend"
+    "build": "lerna run build --scope=@mypass/frontend",
+    "format_lint": "lerna run format_lint",
+    "deploy": "lerna run build --scope=@mypass/frontend && lerna run compile --scope=@mypass/backend"
   },
   "dependencies": {
     "lerna": "^4.0.0"

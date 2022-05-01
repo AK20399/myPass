@@ -10,4 +10,8 @@ exports.router = express_1.default.Router();
 exports.router.get('/test', (req, res) => {
     res.json({ status: 'success' });
 });
+exports.router.post('/login', (req, res) => {
+    console.log('REQ:', req);
+    res.json({ status: true, message: 'Logged in successfully', data: {} });
+});
 //# sourceMappingURL=routes.js.map
