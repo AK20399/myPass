@@ -1,0 +1,20 @@
+{
+  "name": "mypass",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start":"npm run build && cd server && npm run start",
+    "dev": "concurrently \"npm run client-dev\" \"npm run server-dev\"",
+    "build":"npm run client-build && npm run server-build && cp --recursive ./client/build ./server/dist",
+    "client-build":"cd ./client && npm run build",
+    "server-build":"cd ./server && npm run build",
+    "client-dev":"cd client && npm run start",
+    "server-dev":"cd server && npm run dev"
+  },
+  "author": "AK Darji",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^7.5.0"
+  }
+}
