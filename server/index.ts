@@ -1,10 +1,10 @@
 import express, { Express } from 'express';
 import dotenv from 'dotenv';
 import path from 'path';
-import {router} from './routes'
 import cors from 'cors'
 import cookieParser from 'cookie-parser'
 import {connectDB} from './utils/database'
+import {router} from './routes'
 
 dotenv.config();
 

@@ -1,11 +1,12 @@
-import React, { Suspense } from 'react'
+import React, { Suspense, useState } from 'react'
 import {RouterProvider, createBrowserRouter} from 'react-router-dom'
+import { UserContext } from '../context/user'
+import { UserType } from '../types'
 import { ROUTES } from '../utils/routes'
 
 // Pages
 const Home = React.lazy(()=>import('./Home'))
-const Login = React.lazy(()=>import('./login'))
-const Signup = React.lazy(()=>import('./signup'))
+const Login = React.lazy(()=>import('./Login'))
 
 const router = createBrowserRouter([
   {
@@ -13,19 +14,21 @@ const router = createBrowserRouter([
     element: <Home/>,
   },
   {
-    path: ROUTES.LOGIN,
-    element: <Login/>
+     path: ROUTES.LOGIN,
+    element: <Login />,
   },
-  {
-    path:ROUTES.SIGNUP,
-    element:<Signup/>
-  }
 ])
 
+
 const Routes = () => {
+  
+  const [user,setUser] = useState<UserType|undefined>(undefined)
+
   return (
     <Suspense fallback='Loading'>
-      <RouterProvider router={router}/>
+      <UserContext.Provider value={{user,setUser}}>
+        <RouterProvider router={router}/>
+      </UserContext.Provider>
     </Suspense>
   )
 }

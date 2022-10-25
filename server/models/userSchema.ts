@@ -5,7 +5,7 @@ const userSchema = new Schema({
     email:String,
     profilePicture:String,
     googleToken:String,
-    googleId:String
+    mfaSecret:String
 },{versionKey:false})
 
 export default mongoose.model('user',userSchema)
