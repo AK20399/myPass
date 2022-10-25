@@ -4,17 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build":"npx tsc",
-    "start":"node dist/index.js",
-    "dev":"concurrently \"npx tsc --watch\" \"nodemon -q ./dist/index.js\""
+    "build": "npx tsc",
+    "start": "node dist/index.js",
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q ./dist/index.js\""
   },
   "author": "AK Darji",
   "license": "MIT",
   "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.3",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "google-auth-library": "^8.6.0",
+    "mongoose": "^6.6.7"
   },
   "devDependencies": {
+    "@types/cookie-parser": "^1.4.3",
+    "@types/cors": "^2.8.12",
     "@types/express": "^4.17.14",
     "@types/node": "^18.11.3",
     "concurrently": "^7.5.0",
