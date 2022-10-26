@@ -8,7 +8,6 @@ import {router} from './routes'
 
 dotenv.config();
 
-const port = process.env.PORT;
 const app: Express = express();
 app.use(cors({origin:'http://localhost:3000',methods: "GET,HEAD,PUT,PATCH,POST,DELETE",credentials:true}))
 app.use(cookieParser())
@@ -17,10 +16,12 @@ app.use(express.static(path.join(__dirname,'build')))
 
 app.use('/api',router)
 
-connectDB().then(()=>{
-  app.listen(port, () => {
-    console.log(`⚡️[server]: Server is running at https://localhost:${port}`);
-  });
-}).catch(error=>{
-  console.log(error)
-})
+if(process.env.PORT){
+  connectDB().then(()=>{
+    app.listen(process.env.PORT, () => {
+      console.log(`⚡️[server]: Server is running at https://localhost:${process.env.PORT}`);
+    });
+  }).catch(error=>{
+    console.log(error)
+  })
+}
